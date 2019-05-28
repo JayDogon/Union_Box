@@ -123,6 +123,7 @@ class UnionBox(UnionInterface):
             #    del out[c-1]
             #X, Y = out[c][0], out[c][1]
             #c += 1
+        return out
         """
         Merge the two "boxes" together.
            ____           ____
