@@ -114,13 +114,13 @@ class UnionBox(UnionInterface):
             else:
                 x = 0
             if x >= 3:
-                out.remove(c-1)
+                del out[c-1]
             if out[c][1] == Y:
                 y += 1
             else:
                 y = 0
             if y >= 3:
-                out.remove(c-1)
+                del out[c-1]
             X, Y = out[c][0], out[c][1]
             c += 1
         """
