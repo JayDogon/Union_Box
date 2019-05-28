@@ -133,26 +133,6 @@ class UnionBox(UnionInterface):
         del out[ToDel[c]]
         c += 1
     return out
-        """
-        Merge the two "boxes" together.
-           ____           ____
-         _|__  |        _|    |
-        | |  | |  ==>  |      |
-        |_|__|_|       |      |
-
-        Example:
-        input:
-            l: [ (2,0), (2,2), (7,2), (7,0) ]
-            r: [ (4,0), (4,3), (9,3), (9,0) ]
-        return:
-            [ (2,0), (2,2), (4,2), (4,3), (9,3), (9,0) ]
-
-        :param l: Array of coordinates representing one box.
-        :param r: Array of coordinates representing another box.
-        :return: The merged coordinates to present.
-        """
-        # TODO implement me.
-        return []
 
     def union(self, box_list):
         """
