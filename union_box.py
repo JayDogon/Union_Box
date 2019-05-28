@@ -94,16 +94,35 @@ class UnionBox(UnionInterface):
                     cur = 0
         if lcur == len(l):
             if rcur == len(r):
-                return out
+                pass
             else:
                 while rcur < len(r):
                     out.append(r[rcur])
                     rcur+= 1
-                return out
-        while lcur < len(l):
-            out.append(l[lcur])
-            lcur+= 1
-        return out
+        else:
+            while lcur < len(l):
+                out.append(l[lcur])
+                lcur+= 1
+        c = 0
+        x = 0
+        y = 0
+        X = 0
+        Y = 0
+        while(c<len(out)):
+            if out[c][0] == X:
+                x += 1
+            else:
+                x = 0
+            if x >= 3:
+                out.remove(c-1)
+            if out[c][1] == Y:
+                y += 1
+            else:
+                y = 0
+            if y >= 3:
+                out.remove(c-1)
+            X, Y = out[c][0], out[c][1]
+            c += 1
         """
         Merge the two "boxes" together.
            ____           ____
