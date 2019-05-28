@@ -104,35 +104,35 @@ class UnionBox(UnionInterface):
                 out.append(l[lcur])
                 lcur+= 1
         x = 1
-    y = 1
-    X = 0
-    Y = 0
-    c = 0
-    ToDel = []
-    while(c<len(out)):
-        if out[c][0] == X:
-            x += 1
-        else:
-            x = 1
-        if x >= 3:
-            ToDel.insert(0,c-1)
-        if out[c][1] == Y:
-            y += 1
-        else:
-            y = 1
-        if y >= 3:
-            if len(ToDel) >0 and ToDel[0] == c-1:
-                pass
+        y = 1
+        X = 0
+        Y = 0
+        c = 0
+        ToDel = []
+        while(c<len(out)):
+            if out[c][0] == X:
+                x += 1
             else:
+                x = 1
+            if x >= 3:
                 ToDel.insert(0,c-1)
-        X = out[c][0]
-        Y = out[c][1]
-        c += 1
-    c = 0
-    while(c<len(ToDel)):
-        del out[ToDel[c]]
-        c += 1
-    return out
+            if out[c][1] == Y:
+                y += 1
+            else:
+                y = 1
+            if y >= 3:
+                if len(ToDel) >0 and ToDel[0] == c-1:
+                    pass
+                else:
+                    ToDel.insert(0,c-1)
+            X = out[c][0]
+            Y = out[c][1]
+            c += 1
+        c = 0
+        while(c<len(ToDel)):
+            del out[ToDel[c]]
+            c += 1
+        return out
 
     def union(self, box_list):
         """
